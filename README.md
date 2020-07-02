@@ -2,13 +2,13 @@
 
 StockPi is a RaspberryPi based real-time stock price monitoring system powered by [Finnhub's API](https://finnhub.io/)
 
-## Motivation
+## Motivation 👨‍💻
 
-I am a huge stock market enthusiast and monitoring stock prices in realtime requires a dedicated device. So I decided to make it fun and intuitive by using a Raspberry Pi rusting in my cupboard :)
+I am a huge stock market enthusiast and monitoring stock prices in realtime requires a dedicated device (which I don't wanna block just for this purpose). So I decided to make it fun and intuitive by using a Raspberry Pi rusting in my cupboard :)
 
 ![Demo Gif](./docs/demo.gif)
 
-## Getting up and running
+## Getting up and running 🏃‍♂️
 
 ### Hardware
 
@@ -53,7 +53,7 @@ python3 main.py
 
 **Voilla 🤗**
 
-## Service setup on system startup (MacOS/Linux only)
+## Service setup on system startup (MacOS / Linux only) ⚙️
 
 Main advantages of running this on Raspberry Pi is that it's a low power device and we can configure it to auto-run the script on startup which makes it hassle-free.
 
@@ -107,3 +107,7 @@ Now let's enable and start the service
 ```
 
 Yaaay, now to don't need to start the program manually. I'm not a robot 🤖
+
+---
+
+P.S. I am still figuring out python best practices and syntax. 🙅‍♂️
