@@ -11,14 +11,14 @@ load_dotenv()
 LED_BRIGHTNESS = 0.2
 LED_COLOR_PEAK = 10
 DISPLAY_SPEED = 0.3
-STOCK_LIST = ["GOOG", "ACCO", "MSFT", "FB", "PYPL", "AAPL"]
+STOCK_LIST = ["GOOG", "INTC", "MSFT", "FB", "PYPL", "AAPL"]
 STOCK_POINTER = 0
 
 configuration = finnhub.Configuration(
     api_key={
         'token': os.getenv("FINNHUB_TOKEN")
     })
-    
+
 finnhub_client = finnhub.DefaultApi(finnhub.ApiClient(configuration))
 
 
@@ -68,6 +68,12 @@ def showLedBasedOnPercentage(percentage):
     rh.rainbow.show()
 
 
+def incrementStockPointer():
+    global STOCK_POINTER
+    STOCK_POINTER += 1
+    STOCK_POINTER = STOCK_POINTER % len(STOCK_LIST)
+
+
 while True:
     try:
         stockName = STOCK_LIST[STOCK_POINTER]
@@ -103,11 +109,11 @@ while True:
             rh.display.show()
             time.sleep(DISPLAY_SPEED)
 
-        STOCK_POINTER += 1
-        STOCK_POINTER = STOCK_POINTER % len(STOCK_LIST)
+        incrementStockPointer()
     except:
         rh.display.print_str("ERRR")
         rh.display.show()
         rh.rainbow.set_all(LED_COLOR_PEAK, 0, 0, brightness=LED_BRIGHTNESS)
         rh.rainbow.show()
+        incrementStockPointer()
         time.sleep(3)

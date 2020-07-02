@@ -6,6 +6,8 @@ StockPi is a RaspberryPi based real-time stock price monitoring system powered b
 
 I am a huge stock market enthusiast and monitoring stock prices in realtime requires a dedicated device. So I decided to make it fun and intuitive by using a Raspberry Pi rusting in my cupboard :)
 
+![Demo Gif](./docs/demo.gif)
+
 ## Getting up and running
 
 ### Hardware
